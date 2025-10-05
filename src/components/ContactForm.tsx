@@ -9,18 +9,16 @@ import { z } from "zod";
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, { message: "الاسم يجب أن يكون حرفين على الأقل" }).max(100),
-  email: z.string().trim().email({ message: "البريد الإلكتروني غير صحيح" }).max(255),
   phone: z.string().trim().min(10, { message: "رقم الهاتف غير صحيح" }).max(20),
-  message: z.string().trim().min(10, { message: "الرسالة يجب أن تكون 10 أحرف على الأقل" }).max(1000)
+  amount: z.string().trim().min(1, { message: "يرجى إدخال المبلغ" }).max(20)
 });
 
 const ContactForm = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
-    message: ""
+    amount: ""
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,11 +35,11 @@ const ContactForm = () => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       toast({
-        title: "تم إرسال الرسالة بنجاح!",
+        title: "تم إرسال الطلب بنجاح!",
         description: "سنتواصل معك في أقرب وقت ممكن",
       });
       
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({ name: "", phone: "", amount: "" });
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: Record<string, string> = {};
@@ -166,25 +164,6 @@ const ContactForm = () => {
               </div>
 
               <div>
-                <Label htmlFor="email" className="text-right block mb-2">
-                  البريد الإلكتروني *
-                </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={`text-right ${errors.email ? 'border-destructive' : ''}`}
-                  placeholder="example@email.com"
-                  disabled={isSubmitting}
-                />
-                {errors.email && (
-                  <p className="text-destructive text-sm mt-1 text-right">{errors.email}</p>
-                )}
-              </div>
-
-              <div>
                 <Label htmlFor="phone" className="text-right block mb-2">
                   رقم الهاتف *
                 </Label>
@@ -204,20 +183,21 @@ const ContactForm = () => {
               </div>
 
               <div>
-                <Label htmlFor="message" className="text-right block mb-2">
-                  رسالتك *
+                <Label htmlFor="amount" className="text-right block mb-2">
+                  С какой суммы бы хотел начать *
                 </Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
+                <Input
+                  id="amount"
+                  name="amount"
+                  type="text"
+                  value={formData.amount}
                   onChange={handleChange}
-                  className={`min-h-32 text-right ${errors.message ? 'border-destructive' : ''}`}
-                  placeholder="اكتب رسالتك هنا..."
+                  className={`text-right ${errors.amount ? 'border-destructive' : ''}`}
+                  placeholder="مثال: 1000$"
                   disabled={isSubmitting}
                 />
-                {errors.message && (
-                  <p className="text-destructive text-sm mt-1 text-right">{errors.message}</p>
+                {errors.amount && (
+                  <p className="text-destructive text-sm mt-1 text-right">{errors.amount}</p>
                 )}
               </div>
 
@@ -227,7 +207,7 @@ const ContactForm = () => {
                 className="w-full rounded-full"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "جاري الإرسال..." : "إرسال الرسالة"}
+                {isSubmitting ? "جاري الإرسال..." : "إرسال الطلب"}
               </Button>
             </form>
           </div>
