@@ -96,8 +96,10 @@ const Calculator = () => {
                 </div>
 
                 <div className="pt-6">
-                  <Button variant="hero" size="lg" className="w-full rounded-full">
-                    ابدأ الاستثمار الآن
+                  <Button asChild variant="hero" size="lg" className="w-full rounded-full">
+                    <a href="#contact">
+                      ابدأ الاستثمار الآن
+                    </a>
                   </Button>
                 </div>
               </div>

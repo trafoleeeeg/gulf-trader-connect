@@ -59,8 +59,10 @@ const HowToStart = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="rounded-full text-lg px-12">
-            ابدأ الآن مجانًا
+          <Button asChild size="lg" className="rounded-full text-lg px-12">
+            <a href="#contact">
+              ابدأ الآن مجانًا
+            </a>
           </Button>
         </div>
       </div>

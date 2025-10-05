@@ -21,9 +21,11 @@ const Hero = () => {
             </p>
             
             <div className="flex gap-4 justify-end">
-              <Button variant="hero" size="lg" className="rounded-full text-lg gap-3">
-                ابدأ الآن
-                <ArrowLeft className="w-5 h-5" />
+              <Button asChild variant="hero" size="lg" className="rounded-full text-lg gap-3">
+                <a href="#contact">
+                  ابدأ الآن
+                  <ArrowLeft className="w-5 h-5" />
+                </a>
               </Button>
             </div>
             

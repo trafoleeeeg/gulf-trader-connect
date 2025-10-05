@@ -6,8 +6,10 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between" dir="rtl">
           <div className="flex items-center gap-8">
-            <Button variant="default" size="lg" className="rounded-full">
-              استثمر الآن
+            <Button asChild variant="default" size="lg" className="rounded-full">
+              <a href="#contact">
+                استثمر الآن
+              </a>
             </Button>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">
               06 / اتصل بنا
