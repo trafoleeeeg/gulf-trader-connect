@@ -88,48 +88,7 @@ const ContactForm = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
-          <div className="space-y-6 md:space-y-8 animate-fade-in">
-            <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-border hover:shadow-lg transition-all duration-300">
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 md:mb-8">معلومات الاتصال</h3>
-              
-              <div className="space-y-4 md:space-y-6">
-                <div className="flex items-start gap-3 md:gap-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 md:w-6 md:h-6 text-primary" />
-                  </div>
-                  <div className="text-right">
-                    <div className="font-semibold text-foreground mb-1 text-sm md:text-base">الهاتف</div>
-                    <a href="tel:+447488864747" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors" dir="ltr">
-                      +44 74 8886 4747
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 md:gap-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 md:w-6 md:h-6 text-primary" />
-                  </div>
-                  <div className="text-right">
-                    <div className="font-semibold text-foreground mb-1 text-sm md:text-base">تليجرام</div>
-                    <a href="https://t.me/axi_trade" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
-                      @axi_trade
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-primary to-primary-glow p-6 md:p-8 rounded-2xl md:rounded-3xl text-primary-foreground hover:scale-105 transition-transform duration-300">
-              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">هل أنت مستعد للبدء؟</h3>
-              <p className="text-sm md:text-base mb-4 md:mb-6 opacity-90">
-                انضم إلى آلاف المستثمرين الناجحين واحصل على عوائد مضمونة
-              </p>
-              <div className="text-3xl md:text-4xl font-bold mb-1 md:mb-2">10,000+</div>
-              <div className="text-sm md:text-base opacity-90">عميل راضٍ في جميع أنحاء العالم</div>
-            </div>
-          </div>
-
-          <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-border shadow-lg hover:shadow-xl transition-all duration-500 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-border shadow-lg hover:shadow-xl transition-all duration-500 animate-fade-in lg:order-2">
             <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 md:mb-8">أرسل لنا رسالة</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -181,7 +140,7 @@ const ContactForm = () => {
                   value={formData.amount}
                   onChange={handleChange}
                   className={`text-right ${errors.amount ? 'border-destructive' : ''}`}
-                  placeholder="مثال: 1000$"
+                  placeholder="مثال: 250$"
                   disabled={isSubmitting}
                 />
                 {errors.amount && (
@@ -198,6 +157,47 @@ const ContactForm = () => {
                 {isSubmitting ? "جاري الإرسال..." : "إرسال الطلب"}
               </Button>
             </form>
+          </div>
+
+          <div className="space-y-6 md:space-y-8 animate-fade-in lg:order-1" style={{ animationDelay: '0.2s' }}>
+            <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-border hover:shadow-lg transition-all duration-300">
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 md:mb-8">معلومات الاتصال</h3>
+              
+              <div className="space-y-4 md:space-y-6">
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                  </div>
+                  <div className="text-right">
+                    <div className="font-semibold text-foreground mb-1 text-sm md:text-base">الهاتف</div>
+                    <a href="tel:+447488864747" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors" dir="ltr">
+                      +44 74 8886 4747
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                  </div>
+                  <div className="text-right">
+                    <div className="font-semibold text-foreground mb-1 text-sm md:text-base">تليجرام</div>
+                    <a href="https://t.me/axi_trade" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
+                      @axi_trade
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-primary to-primary-glow p-6 md:p-8 rounded-2xl md:rounded-3xl text-primary-foreground hover:scale-105 transition-transform duration-300">
+              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">هل أنت مستعد للبدء؟</h3>
+              <p className="text-sm md:text-base mb-4 md:mb-6 opacity-90">
+                انضم إلى آلاف المستثمرين الناجحين واحصل على عوائد مضمونة
+              </p>
+              <div className="text-3xl md:text-4xl font-bold mb-1 md:mb-2">10,000+</div>
+              <div className="text-sm md:text-base opacity-90">عميل راضٍ في جميع أنحاء العالم</div>
+            </div>
           </div>
         </div>
       </div>
