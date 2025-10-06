@@ -20,12 +20,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-12 md:py-24 bg-background relative overflow-hidden" dir="rtl">
-      <div className="absolute top-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="rotate-180">
-          <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" fill="hsl(var(--background))"/>
-        </svg>
-      </div>
+    <section id="about" className="py-12 md:py-24 bg-background" dir="rtl">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <span className="text-primary font-semibold text-base md:text-lg mb-3 md:mb-4 block">من نحن</span>
