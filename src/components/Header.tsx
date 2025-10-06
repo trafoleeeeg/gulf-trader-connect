@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { Menu, X } from "lucide-react";
 
 const Header = () => {
@@ -11,8 +10,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between" dir="rtl">
           {/* Mobile menu button */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <ThemeToggle />
+          <div className="lg:hidden">
             <Button
               variant="ghost"
               size="icon"
@@ -50,14 +48,9 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Logo and theme toggle for desktop */}
-          <div className="flex items-center gap-4">
-            <div className="text-2xl font-bold">
-              <span className="text-primary">AXI</span> TRADE
-            </div>
-            <div className="hidden lg:block">
-              <ThemeToggle />
-            </div>
+          {/* Logo */}
+          <div className="text-2xl font-bold">
+            <span className="text-primary">AXI</span> TRADE
           </div>
         </nav>
 
