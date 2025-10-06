@@ -7,8 +7,8 @@ const Hero = () => {
     <section id="home" className="min-h-screen pt-24 bg-gradient-to-br from-primary to-primary-glow" dir="rtl">
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div className="text-right space-y-6 md:space-y-8 order-2 lg:order-1">
-            <div className="inline-block bg-background/20 backdrop-blur-sm px-4 md:px-6 py-2 md:py-3 rounded-full text-primary-foreground border border-background/30">
+          <div className="text-right space-y-6 md:space-y-8 order-2 lg:order-1 animate-fade-in">
+            <div className="inline-block bg-background/20 backdrop-blur-sm px-4 md:px-6 py-2 md:py-3 rounded-full text-primary-foreground border border-background/30 hover:bg-background/30 transition-all duration-300 hover:scale-105">
               <span className="font-semibold text-sm md:text-base">الاستثمارات المتاحة</span>
             </div>
             
@@ -30,29 +30,29 @@ const Hero = () => {
             </div>
             
             <div className="grid grid-cols-3 gap-3 md:gap-6 pt-6 md:pt-8">
-              <div className="text-center p-3 md:p-6 bg-background/10 backdrop-blur-sm rounded-xl md:rounded-2xl border border-background/20">
+              <div className="text-center p-3 md:p-6 bg-background/10 backdrop-blur-sm rounded-xl md:rounded-2xl border border-background/20 hover:bg-background/20 transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 <div className="text-2xl md:text-4xl font-bold text-primary-foreground mb-1 md:mb-2">100$</div>
                 <div className="text-xs md:text-base text-primary-foreground/80">الحد الأدنى للإيداع</div>
               </div>
-              <div className="text-center p-3 md:p-6 bg-background/10 backdrop-blur-sm rounded-xl md:rounded-2xl border border-background/20">
+              <div className="text-center p-3 md:p-6 bg-background/10 backdrop-blur-sm rounded-xl md:rounded-2xl border border-background/20 hover:bg-background/20 transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.3s' }}>
                 <div className="text-2xl md:text-4xl font-bold text-primary-foreground mb-1 md:mb-2">100%</div>
                 <div className="text-xs md:text-base text-primary-foreground/80">الموثوقية. لا مخاطر</div>
               </div>
-              <div className="text-center p-3 md:p-6 bg-background/10 backdrop-blur-sm rounded-xl md:rounded-2xl border border-background/20">
+              <div className="text-center p-3 md:p-6 bg-background/10 backdrop-blur-sm rounded-xl md:rounded-2xl border border-background/20 hover:bg-background/20 transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 <div className="text-2xl md:text-4xl font-bold text-primary-foreground mb-1 md:mb-2">24/7</div>
                 <div className="text-xs md:text-base text-primary-foreground/80">نعمل باستمرار</div>
               </div>
             </div>
           </div>
           
-          <div className="relative order-1 lg:order-2">
-            <div className="absolute inset-0 bg-primary-foreground/10 blur-3xl rounded-full"></div>
+          <div className="relative order-1 lg:order-2 animate-scale-in">
+            <div className="absolute inset-0 bg-primary-foreground/10 blur-3xl rounded-full animate-pulse"></div>
             <img 
               src={heroImage} 
               alt="Professional trader" 
-              className="relative rounded-3xl shadow-2xl w-full"
+              className="relative rounded-3xl shadow-2xl w-full hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 bg-background p-4 md:p-6 rounded-xl md:rounded-2xl shadow-xl">
+            <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 bg-background p-4 md:p-6 rounded-xl md:rounded-2xl shadow-xl hover:scale-110 transition-transform duration-300 animate-fade-in" style={{ animationDelay: '0.5s' }}>
               <div className="text-3xl md:text-5xl font-bold text-primary mb-1 md:mb-2">100%</div>
               <div className="text-sm md:text-base text-muted-foreground">النتيجة</div>
             </div>

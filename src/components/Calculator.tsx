@@ -13,7 +13,17 @@ const Calculator = () => {
   const profit = totalReturn - investment;
 
   return (
-    <section id="calculator" className="py-12 md:py-24 bg-secondary/50" dir="rtl">
+    <section id="calculator" className="py-12 md:py-24 bg-secondary/50 relative overflow-hidden" dir="rtl">
+      <div className="absolute top-0 left-0 right-0">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z" fill="hsl(var(--background))"/>
+        </svg>
+      </div>
+      <div className="absolute bottom-0 left-0 right-0">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="rotate-180">
+          <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z" fill="hsl(var(--background))"/>
+        </svg>
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <span className="text-primary font-semibold text-base md:text-lg mb-3 md:mb-4 block">حاسبة الأرباح</span>
@@ -25,7 +35,7 @@ const Calculator = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto bg-card rounded-2xl md:rounded-3xl shadow-xl border border-border p-6 md:p-8 lg:p-12">
+        <div className="max-w-4xl mx-auto bg-card rounded-2xl md:rounded-3xl shadow-xl border border-border p-6 md:p-8 lg:p-12 hover:shadow-2xl transition-all duration-500 animate-fade-in">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             <div className="space-y-6 md:space-y-8">
               <div>
@@ -74,7 +84,7 @@ const Calculator = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-primary to-primary-glow p-6 md:p-8 rounded-xl md:rounded-2xl text-primary-foreground">
+            <div className="bg-gradient-to-br from-primary to-primary-glow p-6 md:p-8 rounded-xl md:rounded-2xl text-primary-foreground hover:scale-105 transition-transform duration-300">
               <div className="space-y-4 md:space-y-6">
                 <div>
                   <div className="text-xs md:text-sm opacity-90 mb-1 md:mb-2">استثمارك الأولي</div>

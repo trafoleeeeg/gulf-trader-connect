@@ -42,7 +42,8 @@ const Reviews = () => {
           {reviews.map((review, index) => (
             <div 
               key={index}
-              className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-2 group animate-fade-in"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                 <div className="w-12 h-12 md:w-16 md:h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-lg md:text-xl flex-shrink-0">

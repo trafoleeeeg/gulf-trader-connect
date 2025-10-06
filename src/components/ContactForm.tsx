@@ -88,8 +88,8 @@ const ContactForm = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
-          <div className="space-y-6 md:space-y-8">
-            <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-border">
+          <div className="space-y-6 md:space-y-8 animate-fade-in">
+            <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-border hover:shadow-lg transition-all duration-300">
               <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 md:mb-8">معلومات الاتصال</h3>
               
               <div className="space-y-4 md:space-y-6">
@@ -131,7 +131,7 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-primary to-primary-glow p-6 md:p-8 rounded-2xl md:rounded-3xl text-primary-foreground">
+            <div className="bg-gradient-to-br from-primary to-primary-glow p-6 md:p-8 rounded-2xl md:rounded-3xl text-primary-foreground hover:scale-105 transition-transform duration-300">
               <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">هل أنت مستعد للبدء؟</h3>
               <p className="text-sm md:text-base mb-4 md:mb-6 opacity-90">
                 انضم إلى آلاف المستثمرين الناجحين واحصل على عوائد مضمونة
@@ -141,7 +141,7 @@ const ContactForm = () => {
             </div>
           </div>
 
-          <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-border shadow-lg">
+          <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-border shadow-lg hover:shadow-xl transition-all duration-500 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 md:mb-8">أرسل لنا رسالة</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -204,7 +204,7 @@ const ContactForm = () => {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full rounded-full"
+                className="w-full rounded-full hover:scale-105 transition-transform duration-300"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "جاري الإرسال..." : "إرسال الطلب"}
