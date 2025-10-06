@@ -11,7 +11,7 @@ const HowToStart = () => {
     {
       icon: DollarSign,
       title: "الإيداع",
-      description: "قم بإيداع مبلغ بسيط بدءًا من 100$"
+      description: "قم بإيداع مبلغ بسيط بدءًا من 250$"
     },
     {
       icon: Sparkles,

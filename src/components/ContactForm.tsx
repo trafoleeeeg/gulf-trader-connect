@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -99,8 +99,8 @@ const ContactForm = () => {
                   </div>
                   <div className="text-right">
                     <div className="font-semibold text-foreground mb-1 text-sm md:text-base">الهاتف</div>
-                    <a href="tel:+447700164196" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors" dir="ltr">
-                      +44 77 0016 4196
+                    <a href="tel:+447488864747" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors" dir="ltr">
+                      +44 74 8886 4747
                     </a>
                   </div>
                 </div>
@@ -110,22 +110,10 @@ const ContactForm = () => {
                     <Mail className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   </div>
                   <div className="text-right">
-                    <div className="font-semibold text-foreground mb-1 text-sm md:text-base">البريد الإلكتروني</div>
-                    <a href="mailto:support@axitrade.com" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
-                      support@axitrade.com
+                    <div className="font-semibold text-foreground mb-1 text-sm md:text-base">تليجرام</div>
+                    <a href="https://t.me/axi_trade" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
+                      @axi_trade
                     </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 md:gap-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 md:w-6 md:h-6 text-primary" />
-                  </div>
-                  <div className="text-right">
-                    <div className="font-semibold text-foreground mb-1 text-sm md:text-base">العنوان</div>
-                    <p className="text-sm md:text-base text-muted-foreground">
-                      لندن، المملكة المتحدة
-                    </p>
                   </div>
                 </div>
               </div>
@@ -184,7 +172,7 @@ const ContactForm = () => {
 
               <div>
                 <Label htmlFor="amount" className="text-right block mb-2">
-                  С какой суммы бы хотел начать *
+                  المبلغ الذي تريد البدء به *
                 </Label>
                 <Input
                   id="amount"

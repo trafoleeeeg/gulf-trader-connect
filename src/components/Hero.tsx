@@ -31,7 +31,7 @@ const Hero = () => {
             
             <div className="grid grid-cols-3 gap-3 md:gap-6 pt-6 md:pt-8">
               <div className="text-center p-3 md:p-6 bg-background/10 backdrop-blur-sm rounded-xl md:rounded-2xl border border-background/20 hover:bg-background/20 transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                <div className="text-2xl md:text-4xl font-bold text-primary-foreground mb-1 md:mb-2">100$</div>
+                <div className="text-2xl md:text-4xl font-bold text-primary-foreground mb-1 md:mb-2">250$</div>
                 <div className="text-xs md:text-base text-primary-foreground/80">الحد الأدنى للإيداع</div>
               </div>
               <div className="text-center p-3 md:p-6 bg-background/10 backdrop-blur-sm rounded-xl md:rounded-2xl border border-background/20 hover:bg-background/20 transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: '0.3s' }}>

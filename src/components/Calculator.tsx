@@ -48,12 +48,12 @@ const Calculator = () => {
                   value={investment}
                   onChange={(e) => setInvestment(Number(e.target.value))}
                   className="text-xl md:text-2xl h-12 md:h-14 text-right"
-                  min={100}
+                  min={250}
                 />
                 <Slider
                   value={[investment]}
                   onValueChange={(value) => setInvestment(value[0])}
-                  min={100}
+                  min={250}
                   max={100000}
                   step={100}
                   className="mt-3 md:mt-4"

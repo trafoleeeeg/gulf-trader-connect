@@ -62,9 +62,12 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-base md:text-lg mb-3 md:mb-4">اتصل بنا</h3>
             <ul className="space-y-2 text-sm md:text-base text-muted-foreground">
-              <li dir="ltr" className="text-right">+44 77 0016 4196</li>
-              <li>support@axitrade.com</li>
-              <li>لندن، المملكة المتحدة</li>
+              <li dir="ltr" className="text-right">+44 74 8886 4747</li>
+              <li>
+                <a href="https://t.me/axi_trade" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                  @axi_trade
+                </a>
+              </li>
             </ul>
           </div>
         </div>
