@@ -13,23 +13,23 @@ const Calculator = () => {
   const profit = totalReturn - investment;
 
   return (
-    <section id="calculator" className="py-24 bg-secondary/50" dir="rtl">
+    <section id="calculator" className="py-12 md:py-24 bg-secondary/50" dir="rtl">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="text-primary font-semibold text-lg mb-4 block">حاسبة الأرباح</span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <span className="text-primary font-semibold text-base md:text-lg mb-3 md:mb-4 block">حاسبة الأرباح</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6">
             احسب أرباحك المحتملة
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
             اكتشف كم يمكنك أن تربح من خلال استثمارك معنا
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto bg-card rounded-3xl shadow-xl border border-border p-8 lg:p-12">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-8">
+        <div className="max-w-4xl mx-auto bg-card rounded-2xl md:rounded-3xl shadow-xl border border-border p-6 md:p-8 lg:p-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+            <div className="space-y-6 md:space-y-8">
               <div>
-                <Label htmlFor="investment" className="text-lg mb-4 block text-right">
+                <Label htmlFor="investment" className="text-base md:text-lg mb-3 md:mb-4 block text-right">
                   مبلغ الاستثمار (بالدولار)
                 </Label>
                 <Input
@@ -37,7 +37,7 @@ const Calculator = () => {
                   type="number"
                   value={investment}
                   onChange={(e) => setInvestment(Number(e.target.value))}
-                  className="text-2xl h-14 text-right"
+                  className="text-xl md:text-2xl h-12 md:h-14 text-right"
                   min={100}
                 />
                 <Slider
@@ -46,12 +46,12 @@ const Calculator = () => {
                   min={100}
                   max={100000}
                   step={100}
-                  className="mt-4"
+                  className="mt-3 md:mt-4"
                 />
               </div>
 
               <div>
-                <Label htmlFor="duration" className="text-lg mb-4 block text-right">
+                <Label htmlFor="duration" className="text-base md:text-lg mb-3 md:mb-4 block text-right">
                   مدة الاستثمار (بالأشهر)
                 </Label>
                 <Input
@@ -59,7 +59,7 @@ const Calculator = () => {
                   type="number"
                   value={duration}
                   onChange={(e) => setDuration(Number(e.target.value))}
-                  className="text-2xl h-14 text-right"
+                  className="text-xl md:text-2xl h-12 md:h-14 text-right"
                   min={1}
                   max={24}
                 />
@@ -69,34 +69,34 @@ const Calculator = () => {
                   min={1}
                   max={24}
                   step={1}
-                  className="mt-4"
+                  className="mt-3 md:mt-4"
                 />
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-primary to-primary-glow p-8 rounded-2xl text-primary-foreground">
-              <div className="space-y-6">
+            <div className="bg-gradient-to-br from-primary to-primary-glow p-6 md:p-8 rounded-xl md:rounded-2xl text-primary-foreground">
+              <div className="space-y-4 md:space-y-6">
                 <div>
-                  <div className="text-sm opacity-90 mb-2">استثمارك الأولي</div>
-                  <div className="text-3xl font-bold">${investment.toLocaleString()}</div>
+                  <div className="text-xs md:text-sm opacity-90 mb-1 md:mb-2">استثمارك الأولي</div>
+                  <div className="text-2xl md:text-3xl font-bold">${investment.toLocaleString()}</div>
                 </div>
                 
                 <div className="h-px bg-primary-foreground/20"></div>
                 
                 <div>
-                  <div className="text-sm opacity-90 mb-2">الأرباح المتوقعة</div>
-                  <div className="text-3xl font-bold text-yellow-300">${profit.toLocaleString('en-US', { maximumFractionDigits: 0 })}</div>
+                  <div className="text-xs md:text-sm opacity-90 mb-1 md:mb-2">الأرباح المتوقعة</div>
+                  <div className="text-2xl md:text-3xl font-bold text-yellow-300">${profit.toLocaleString('en-US', { maximumFractionDigits: 0 })}</div>
                 </div>
                 
                 <div className="h-px bg-primary-foreground/20"></div>
                 
                 <div>
-                  <div className="text-sm opacity-90 mb-2">إجمالي العائد</div>
-                  <div className="text-4xl font-bold">${totalReturn.toLocaleString('en-US', { maximumFractionDigits: 0 })}</div>
+                  <div className="text-xs md:text-sm opacity-90 mb-1 md:mb-2">إجمالي العائد</div>
+                  <div className="text-3xl md:text-4xl font-bold">${totalReturn.toLocaleString('en-US', { maximumFractionDigits: 0 })}</div>
                 </div>
 
-                <div className="pt-6">
-                  <Button asChild variant="hero" size="lg" className="w-full rounded-full">
+                <div className="pt-4 md:pt-6">
+                  <Button asChild variant="hero" size="lg" className="w-full rounded-full text-sm md:text-base">
                     <a href="#contact">
                       ابدأ الاستثمار الآن
                     </a>
@@ -106,8 +106,8 @@ const Calculator = () => {
             </div>
           </div>
 
-          <div className="mt-8 p-6 bg-muted/50 rounded-xl text-center">
-            <p className="text-sm text-muted-foreground">
+          <div className="mt-6 md:mt-8 p-4 md:p-6 bg-muted/50 rounded-xl text-center">
+            <p className="text-xs md:text-sm text-muted-foreground">
               * الحسابات تقديرية بناءً على عائد شهري 15%. الأداء السابق لا يضمن النتائج المستقبلية.
             </p>
           </div>

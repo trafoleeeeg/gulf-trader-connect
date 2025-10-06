@@ -75,55 +75,55 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background" dir="rtl">
+    <section id="contact" className="py-12 md:py-24 bg-background" dir="rtl">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="text-primary font-semibold text-lg mb-4 block">اتصل بنا</span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+        <div className="text-center mb-12 md:mb-16">
+          <span className="text-primary font-semibold text-base md:text-lg mb-3 md:mb-4 block">اتصل بنا</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6">
             نحن هنا لمساعدتك
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
             لديك أسئلة؟ تواصل معنا وسنجيب على جميع استفساراتك
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div className="space-y-8">
-            <div className="bg-card p-8 rounded-3xl border border-border">
-              <h3 className="text-2xl font-bold text-foreground mb-8">معلومات الاتصال</h3>
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
+          <div className="space-y-6 md:space-y-8">
+            <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-border">
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 md:mb-8">معلومات الاتصال</h3>
               
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-primary" />
+              <div className="space-y-4 md:space-y-6">
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   </div>
                   <div className="text-right">
-                    <div className="font-semibold text-foreground mb-1">الهاتف</div>
-                    <a href="tel:+447700164196" className="text-muted-foreground hover:text-primary transition-colors" dir="ltr">
+                    <div className="font-semibold text-foreground mb-1 text-sm md:text-base">الهاتف</div>
+                    <a href="tel:+447700164196" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors" dir="ltr">
                       +44 77 0016 4196
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-primary" />
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   </div>
                   <div className="text-right">
-                    <div className="font-semibold text-foreground mb-1">البريد الإلكتروني</div>
-                    <a href="mailto:support@axitrade.com" className="text-muted-foreground hover:text-primary transition-colors">
+                    <div className="font-semibold text-foreground mb-1 text-sm md:text-base">البريد الإلكتروني</div>
+                    <a href="mailto:support@axitrade.com" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
                       support@axitrade.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-primary" />
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   </div>
                   <div className="text-right">
-                    <div className="font-semibold text-foreground mb-1">العنوان</div>
-                    <p className="text-muted-foreground">
+                    <div className="font-semibold text-foreground mb-1 text-sm md:text-base">العنوان</div>
+                    <p className="text-sm md:text-base text-muted-foreground">
                       لندن، المملكة المتحدة
                     </p>
                   </div>
@@ -131,18 +131,18 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-primary to-primary-glow p-8 rounded-3xl text-primary-foreground">
-              <h3 className="text-2xl font-bold mb-4">هل أنت مستعد للبدء؟</h3>
-              <p className="mb-6 opacity-90">
+            <div className="bg-gradient-to-br from-primary to-primary-glow p-6 md:p-8 rounded-2xl md:rounded-3xl text-primary-foreground">
+              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">هل أنت مستعد للبدء؟</h3>
+              <p className="text-sm md:text-base mb-4 md:mb-6 opacity-90">
                 انضم إلى آلاف المستثمرين الناجحين واحصل على عوائد مضمونة
               </p>
-              <div className="text-4xl font-bold mb-2">10,000+</div>
-              <div className="opacity-90">عميل راضٍ في جميع أنحاء العالم</div>
+              <div className="text-3xl md:text-4xl font-bold mb-1 md:mb-2">10,000+</div>
+              <div className="text-sm md:text-base opacity-90">عميل راضٍ في جميع أنحاء العالم</div>
             </div>
           </div>
 
-          <div className="bg-card p-8 rounded-3xl border border-border shadow-lg">
-            <h3 className="text-2xl font-bold text-foreground mb-8">أرسل لنا رسالة</h3>
+          <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-border shadow-lg">
+            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 md:mb-8">أرسل لنا رسالة</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
