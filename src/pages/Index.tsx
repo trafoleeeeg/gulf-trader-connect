@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
-import ContactForm from "@/components/ContactForm";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -9,9 +9,9 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <main>
-        <ContactForm />
         <Hero />
         <About />
+        <ContactForm />
       </main>
       <Footer />
     </div>
