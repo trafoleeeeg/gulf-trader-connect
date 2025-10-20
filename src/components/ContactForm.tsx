@@ -80,7 +80,7 @@ const ContactForm = () => {
       });
     }
   };
-  return <section id="contact" className="py-12 md:py-24 bg-background" dir="rtl">
+  return <section id="contact" className="py-12 md:py-24 bg-muted/30" dir="rtl">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <span className="text-primary font-semibold text-base md:text-lg mb-3 md:mb-4 block">اتصل بنا</span>
