@@ -92,8 +92,8 @@ const ContactForm = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
-          <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-border shadow-lg hover:shadow-xl transition-all duration-500 animate-fade-in lg:order-2">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-border shadow-lg hover:shadow-xl transition-all duration-500 animate-fade-in">
             <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 md:mb-8">أرسل لنا رسالة</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
