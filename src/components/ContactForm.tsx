@@ -6,15 +6,21 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail } from "lucide-react";
 import { z } from "zod";
-
 const contactSchema = z.object({
-  name: z.string().trim().min(2, { message: "الاسم يجب أن يكون حرفين على الأقل" }).max(100),
-  phone: z.string().trim().min(10, { message: "رقم الهاتف غير صحيح" }).max(20),
-  amount: z.string().trim().min(1, { message: "يرجى إدخال المبلغ" }).max(20)
+  name: z.string().trim().min(2, {
+    message: "الاسم يجب أن يكون حرفين على الأقل"
+  }).max(100),
+  phone: z.string().trim().min(10, {
+    message: "رقم الهاتف غير صحيح"
+  }).max(20),
+  amount: z.string().trim().min(1, {
+    message: "يرجى إدخال المبلغ"
+  }).max(20)
 });
-
 const ContactForm = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -22,28 +28,28 @@ const ContactForm = () => {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
     setIsSubmitting(true);
-
     try {
       const validatedData = contactSchema.parse(formData);
-      
+
       // Simulate form submission
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
       toast({
         title: "تم إرسال الطلب بنجاح!",
-        description: "سنتواصل معك في أقرب وقت ممكن",
+        description: "سنتواصل معك في أقرب وقت ممكن"
       });
-      
-      setFormData({ name: "", phone: "", amount: "" });
+      setFormData({
+        name: "",
+        phone: "",
+        amount: ""
+      });
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: Record<string, string> = {};
-        error.errors.forEach((err) => {
+        error.errors.forEach(err => {
           if (err.path[0]) {
             fieldErrors[err.path[0] as string] = err.message;
           }
@@ -59,7 +65,6 @@ const ContactForm = () => {
       setIsSubmitting(false);
     }
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
       ...prev,
@@ -67,15 +72,15 @@ const ContactForm = () => {
     }));
     if (errors[e.target.name]) {
       setErrors(prev => {
-        const newErrors = { ...prev };
+        const newErrors = {
+          ...prev
+        };
         delete newErrors[e.target.name];
         return newErrors;
       });
     }
   };
-
-  return (
-    <section id="contact" className="py-12 md:py-24 bg-background" dir="rtl">
+  return <section id="contact" className="py-12 md:py-24 bg-background" dir="rtl">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <span className="text-primary font-semibold text-base md:text-lg mb-3 md:mb-4 block">اتصل بنا</span>
@@ -96,113 +101,35 @@ const ContactForm = () => {
                 <Label htmlFor="name" className="text-right block mb-2">
                   الاسم الكامل *
                 </Label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className={`text-right ${errors.name ? 'border-destructive' : ''}`}
-                  placeholder="أدخل اسمك الكامل"
-                  disabled={isSubmitting}
-                />
-                {errors.name && (
-                  <p className="text-destructive text-sm mt-1 text-right">{errors.name}</p>
-                )}
+                <Input id="name" name="name" value={formData.name} onChange={handleChange} className={`text-right ${errors.name ? 'border-destructive' : ''}`} placeholder="أدخل اسمك الكامل" disabled={isSubmitting} />
+                {errors.name && <p className="text-destructive text-sm mt-1 text-right">{errors.name}</p>}
               </div>
 
               <div>
                 <Label htmlFor="phone" className="text-right block mb-2">
                   رقم الهاتف *
                 </Label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className={`text-right ${errors.phone ? 'border-destructive' : ''}`}
-                  placeholder="+966 XX XXX XXXX"
-                  disabled={isSubmitting}
-                />
-                {errors.phone && (
-                  <p className="text-destructive text-sm mt-1 text-right">{errors.phone}</p>
-                )}
+                <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className={`text-right ${errors.phone ? 'border-destructive' : ''}`} placeholder="+966 XX XXX XXXX" disabled={isSubmitting} />
+                {errors.phone && <p className="text-destructive text-sm mt-1 text-right">{errors.phone}</p>}
               </div>
 
               <div>
                 <Label htmlFor="amount" className="text-right block mb-2">
                   المبلغ الذي تريد البدء به *
                 </Label>
-                <Input
-                  id="amount"
-                  name="amount"
-                  type="text"
-                  value={formData.amount}
-                  onChange={handleChange}
-                  className={`text-right ${errors.amount ? 'border-destructive' : ''}`}
-                  placeholder="مثال: 250$"
-                  disabled={isSubmitting}
-                />
-                {errors.amount && (
-                  <p className="text-destructive text-sm mt-1 text-right">{errors.amount}</p>
-                )}
+                <Input id="amount" name="amount" type="text" value={formData.amount} onChange={handleChange} className={`text-right ${errors.amount ? 'border-destructive' : ''}`} placeholder="مثال: 250$" disabled={isSubmitting} />
+                {errors.amount && <p className="text-destructive text-sm mt-1 text-right">{errors.amount}</p>}
               </div>
 
-              <Button 
-                type="submit" 
-                size="lg" 
-                className="w-full rounded-full hover:scale-105 transition-transform duration-300"
-                disabled={isSubmitting}
-              >
+              <Button type="submit" size="lg" className="w-full rounded-full hover:scale-105 transition-transform duration-300" disabled={isSubmitting}>
                 {isSubmitting ? "جاري الإرسال..." : "إرسال الطلب"}
               </Button>
             </form>
           </div>
 
-          <div className="space-y-6 md:space-y-8 animate-fade-in lg:order-1" style={{ animationDelay: '0.2s' }}>
-            <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-border hover:shadow-lg transition-all duration-300">
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 md:mb-8">معلومات الاتصال</h3>
-              
-              <div className="space-y-4 md:space-y-6">
-                <div className="flex items-start gap-3 md:gap-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 md:w-6 md:h-6 text-primary" />
-                  </div>
-                  <div className="text-right">
-                    <div className="font-semibold text-foreground mb-1 text-sm md:text-base">الهاتف</div>
-                    <a href="tel:+447488864747" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors" dir="ltr">
-                      +44 74 8886 4747
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 md:gap-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 md:w-6 md:h-6 text-primary" />
-                  </div>
-                  <div className="text-right">
-                    <div className="font-semibold text-foreground mb-1 text-sm md:text-base">تليجرام</div>
-                    <a href="https://t.me/axi_trade" target="_blank" rel="noopener noreferrer" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
-                      @axi_trade
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-primary to-primary-glow p-6 md:p-8 rounded-2xl md:rounded-3xl text-primary-foreground hover:scale-105 transition-transform duration-300">
-              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">هل أنت مستعد للبدء؟</h3>
-              <p className="text-sm md:text-base mb-4 md:mb-6 opacity-90">
-                انضم إلى آلاف المستثمرين الناجحين واحصل على عوائد مضمونة
-              </p>
-              <div className="text-3xl md:text-4xl font-bold mb-1 md:mb-2">10,000+</div>
-              <div className="text-sm md:text-base opacity-90">عميل راضٍ في جميع أنحاء العالم</div>
-            </div>
-          </div>
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactForm;
